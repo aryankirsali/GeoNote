@@ -9,7 +9,7 @@ Travel Map app where users can add a note to any location they visit/want.
 - [5] Icon on left to open list of users. On clicking the user name, it will show all the places that user has visited
 
 ## Note
--- Learn about
+### Learn about
 - [1] useState and useEffect
 - [2] localStorage
 - [3] React Router
