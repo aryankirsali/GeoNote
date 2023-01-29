@@ -6,10 +6,14 @@ import axios from "axios";
 import { format } from "timeago.js";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import MenuButton from "./components/MenuButton";
+import SearchForm from './components/SearchForm';
 
 function App() {
   const myStorage = window.localStorage;
-  const [currentUsername, setCurrentUsername] = useState(myStorage.getItem("user"));//user remain same after screen refresh
+  const [currentUsername, setCurrentUsername] = useState(
+    myStorage.getItem("user")
+  ); //user remain same after screen refresh
   const [pins, setPins] = useState([]);
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [newPlace, setNewPlace] = useState(null);
@@ -25,7 +29,7 @@ function App() {
     longitude: 80,
     zoom: 4,
   });
-  
+
   const handleMarkerClick = (id, lat, long) => {
     setCurrentPlaceId(id);
     setViewport({ ...viewport, latitude: lat, longitude: long });
@@ -40,7 +44,7 @@ function App() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();//to prevent screen refresh
+    e.preventDefault(); //to prevent screen refresh
     const newPin = {
       username: currentUsername,
       title,
@@ -49,7 +53,7 @@ function App() {
       lat: newPlace.lat,
       long: newPlace.long,
     };
-    //send data to backend 
+    //send data to backend
     try {
       const res = await axios.post("/pins", newPin);
       setPins([...pins, res.data]);
@@ -70,7 +74,7 @@ function App() {
     };
     getPins();
   }, []);
-  
+
   const handleLogout = () => {
     setCurrentUsername(null);
     myStorage.removeItem("user");
@@ -100,7 +104,8 @@ function App() {
               <Room
                 style={{
                   fontSize: 7 * viewport.zoom,
-                  color: currentUsername === p.username ? "tomato" : "slateblue",
+                  color:
+                    currentUsername === p.username ? "tomato" : "slateblue",
                   cursor: "pointer",
                 }}
                 onClick={() => handleMarkerClick(p._id, p.lat, p.long)}
@@ -213,6 +218,8 @@ function App() {
             myStorage={myStorage}
           />
         )}
+        <MenuButton viewport={viewport} setViewport={setViewport} />
+        <SearchForm viewport={viewport} setViewport={setViewport} setNewPlace={setNewPlace} />
       </ReactMapGL>
     </div>
   );

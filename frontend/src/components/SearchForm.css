@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.label {
+  display: flex;
+  font-weight: bold;
+  color: rgb(156 0 255);
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: none;
+}
+
+.text-input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: rgb(187, 0, 255);
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
