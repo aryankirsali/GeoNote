@@ -9,9 +9,9 @@ dotenv.config();
 
 app.use(express.json());
 
-mongoose.set('strictQuery', false);
+mongoose.set("strictQuery", false);
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -19,7 +19,7 @@ mongoose
     console.log("Error while connecting to MongoDB", err);
   });
 
-
+   
 app.use("/api/pins", pinRoute);
 app.use("/api/users", userRoute);
 app.listen(8800, () => {
