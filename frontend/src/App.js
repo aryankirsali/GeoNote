@@ -85,11 +85,11 @@ function App() {
     <div style={{ height: "100vh", width: "100%" }}>
       <Map
         {...viewport}
-        mapboxApiAccessToken="pk.eyJ1IjoiYXJ5YW5raXJzYWxpIiwiYSI6ImNsZDc4c2ptcDBzZGkzdnFtcDM1c200eXEifQ.uxfEP-aGw6fyyoLgOnKyRg"
+        mapboxApiAccessToken="pk.eyJ1IjoiYXJ5YW5raXJzYWxpIiwiYSI6ImNsZGw3MHBoaTA5NHozcW1yb3h4dnNodmIifQ.Oe87GA6MHZDndBZnQuVWVQ"
         width="100%"
         height="100%"
         transitionDuration="200"
-        mapStyle="mapbox://styles/mapbox/streets-v11"
+        // mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={(viewport) => setViewport(viewport)}
         onDblClick={currentUsername && handleAddClick}
       >
