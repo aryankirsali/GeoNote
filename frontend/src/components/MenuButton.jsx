@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Star} from "@material-ui/icons";
-import axios from "axios";
+import axios from "../axios";
 import "./MenuButton.css";
 
 export default function MenuButton({ viewport, setViewport }) {
