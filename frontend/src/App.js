@@ -89,7 +89,7 @@ function App() {
         width="100%"
         height="100%"
         transitionDuration="200"
-        // mapStyle="mapbox://styles/mapbox/streets-v11"
+        mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={(viewport) => setViewport(viewport)}
         onDblClick={currentUsername && handleAddClick}
       >
