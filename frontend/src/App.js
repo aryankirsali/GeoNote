@@ -9,7 +9,7 @@ import Login from "./components/Login";
 import MenuButton from "./components/MenuButton";
 import SearchForm from './components/SearchForm';
 import 'mapbox-gl/dist/mapbox-gl.css';
-
+require('mapbox-gl/dist/mapbox-gl.css');
 function App() {
   const myStorage = window.localStorage;
   const [currentUsername, setCurrentUsername] = useState(
