@@ -1,5 +1,5 @@
 import "./App.css";
-import ReactMapGL, { Marker, Popup } from "react-map-gl";
+import Map, { Marker, Popup } from "react-map-gl";
 import { useEffect, useState } from "react";
 import { Room, Star } from "@material-ui/icons";
 import axios from "axios";
@@ -8,6 +8,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import MenuButton from "./components/MenuButton";
 import SearchForm from './components/SearchForm';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 function App() {
   const myStorage = window.localStorage;
@@ -82,7 +83,7 @@ function App() {
 
   return (
     <div style={{ height: "100vh", width: "100%" }}>
-      <ReactMapGL
+      <Map
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoiYXJ5YW5raXJzYWxpIiwiYSI6ImNsZDc4c2ptcDBzZGkzdnFtcDM1c200eXEifQ.uxfEP-aGw6fyyoLgOnKyRg"
         width="100%"
@@ -220,7 +221,7 @@ function App() {
         )}
         <MenuButton viewport={viewport} setViewport={setViewport} />
         <SearchForm viewport={viewport} setViewport={setViewport} setNewPlace={setNewPlace} />
-      </ReactMapGL>
+      </Map>
     </div>
   );
 }
