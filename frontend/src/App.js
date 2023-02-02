@@ -85,7 +85,7 @@ function App() {
     <div style={{ height: "100vh", width: "100%" }}>
       <Map
         {...viewport}
-        mapboxAccessToken={MAPBOX_TOKEN}
+        mapboxApiAccessToken={MAPBOX_TOKEN}
         width="100%"
         height="100%"
         transitionDuration="200"
