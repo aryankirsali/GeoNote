@@ -9,7 +9,7 @@ import Login from "./components/Login";
 import MenuButton from "./components/MenuButton";
 import SearchForm from './components/SearchForm';
 import 'mapbox-gl/dist/mapbox-gl.css';
-require('mapbox-gl/dist/mapbox-gl.css');
+const MAPBOX_TOKEN = 'pk.eyJ1IjoiYXJ5YW5raXJzYWxpIiwiYSI6ImNsZGw3MHBoaTA5NHozcW1yb3h4dnNodmIifQ.Oe87GA6MHZDndBZnQuVWVQ'; 
 function App() {
   const myStorage = window.localStorage;
   const [currentUsername, setCurrentUsername] = useState(
@@ -85,7 +85,7 @@ function App() {
     <div style={{ height: "100vh", width: "100%" }}>
       <Map
         {...viewport}
-        mapboxApiAccessToken="pk.eyJ1IjoiYXJ5YW5raXJzYWxpIiwiYSI6ImNsZGw3MHBoaTA5NHozcW1yb3h4dnNodmIifQ.Oe87GA6MHZDndBZnQuVWVQ"
+        mapboxAccessToken={MAPBOX_TOKEN}
         width="100%"
         height="100%"
         transitionDuration="200"
